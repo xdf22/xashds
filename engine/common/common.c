@@ -21,6 +21,10 @@ GNU General Public License for more details.
 #include "library.h"
 #include "sequence.h"
 
+#if XASH_DSI
+#include <alloca.h>
+#endif
+
 static const char *file_exts[] =
 {
 	"cfg",

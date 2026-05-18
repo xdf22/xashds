@@ -22,6 +22,7 @@ GNU General Public License for more details.
 #define VIDEO_FBDEV   3
 #define VIDEO_DOS     4
 #define VIDEO_PSP     5
+#define VIDEO_DSI     6
 
 
 // audio backends (XASH_SOUND)
@@ -43,6 +44,7 @@ GNU General Public License for more details.
 #define INPUT_ANDROID 2
 #define INPUT_EVDEV   3
 #define INPUT_PSP     4
+#define INPUT_DSI     5
 
 // timer (XASH_TIMER)
 #define TIMER_NULL  0 // not used
@@ -51,6 +53,7 @@ GNU General Public License for more details.
 #define TIMER_WIN32 3
 #define TIMER_DOS   4
 #define TIMER_PSP   5
+#define TIMER_DSI   6
 
 // messageboxes (XASH_MESSAGEBOX)
 #define MSGBOX_STDERR  0
@@ -58,6 +61,7 @@ GNU General Public License for more details.
 #define MSGBOX_ANDROID 2
 #define MSGBOX_WIN32   3
 #define MSGBOX_PSP     4
+#define MSGBOX_DSI     5
 
 // library loading (XASH_LIB)
 #define LIB_NULL   0

@@ -54,8 +54,9 @@ typedef struct table_s
 	void *pointer;
 } table_t;
 
-
+#if ! XASH_DSI
 #include "generated_library_tables.h"
+#endif
 
 static void *Lib_Find(table_t *tbl, const char *name )
 {
@@ -71,7 +72,9 @@ static void *Lib_Find(table_t *tbl, const char *name )
 
 void *COM_LoadLibrary( const char *dllname, int build_ordinals_table, qboolean directpath )
 {
+#if ! XASH_DSI
 	return Lib_Find((table_t*)libs, dllname);
+#endif
 }
 
 void COM_FreeLibrary( void *hInstance )

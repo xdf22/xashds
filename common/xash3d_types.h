@@ -35,7 +35,12 @@ typedef vec_t		matrix4x4[4][4];
 #undef false
 
 #ifndef __cplusplus
+#if XASH_DSI
+#include <stdbool.h>
+#define qboolean bool
+#else
 typedef enum { false, true }	qboolean;
+#endif
 #else
 typedef int qboolean;
 #endif

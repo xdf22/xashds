@@ -67,6 +67,10 @@ Even if Xash3D FWGS does support targetting 64-bit, you can't load games without
 * Build pspsdk(GCC 9.3) from https://github.com/pspdev
 * Clone this repository: `git clone --recursive https://github.com/Crow-bar/xash3d-fwgs`.
 
+#### DSi
+* Get BlocksDS from https://blocksds.skylyrac.net/
+* Clone this repository: `git clone --recursive https://github.com/xdf22/xashds`.
+
 ### Building
 #### Windows(Visual Studio)
 0) Open command line
@@ -92,6 +96,11 @@ Even if Xash3D FWGS does support targetting 64-bit, you can't load games without
 3) Compile: `./waf build`
 4) Install(optional): `./waf install`
 
+#### DSi
+##### (uses cmake because)
+0) Navigate to `xash3d-fwgs` directory.
+1) Configure a build: `cmake -B build -DCMAKE_TOOLCHAIN_FILE=$BLOCKSDS/cmake/BlocksDSi.cmake`
+2) Compile: `make -C build` (you can also add `-j $(nproc)` to speed up compiling using all cores)
 
 ## Running
 0) Copy libraries and main executable somewhere, if you're skipped installation stage.

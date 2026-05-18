@@ -31,6 +31,11 @@ GNU General Public License for more details.
 #define XASH_NOCONHOST 1
 #endif
 
+#ifdef XASH_DSI
+#include <nds.h>
+#include <fat.h>
+#endif
+
 static char szGameDir[128]; // safe place to keep gamedir
 static int g_iArgc;
 static char **g_pszArgv;
@@ -80,6 +85,14 @@ int main( int argc, char** argv )
 {
 	char gamedir_buf[32] = "";
 	const char *gamedir = getenv( "XASH3D_GAMEDIR" );
+
+#ifdef XASH_DSI
+	consoleDemoInit();
+	if (!fatInitDefault())
+		Sys_Error("Failed to initialize FAT!\n");
+
+	chdir("sd:/xash");
+#endif
 
 	if( !COM_CheckString( gamedir ) )
 	{

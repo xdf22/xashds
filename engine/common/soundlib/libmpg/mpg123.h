@@ -52,6 +52,10 @@ typedef unsigned long	ulong;
 typedef unsigned int	uint;
 typedef long		mpg_off_t;
 
+#if XASH_DSI
+typedef int ssize_t; // is this correct?
+#endif
+
 #ifdef _MSC_VER // a1ba: MSVC6 don't have ssize_t
 typedef long		mpg_ssize_t;
 #else

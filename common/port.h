@@ -93,6 +93,22 @@ GNU General Public License for more details.
 	#define FreeLibrary( x )		( 0 )
 #endif
 
+#if XASH_DSI
+	#define PATH_SPLITTER "/"
+	#include <unistd.h>
+	#include <dlfcn.h>
+	#define PATH_MAX 256
+	#define O_BINARY 0 // O_BINARY is Windows extension
+	#define O_TEXT 0 // O_TEXT is Windows extension
+	// Windows functions to posix equivalent
+	#define _mkdir( x )					mkdir( x, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH )
+	#define LoadLibrary( x )			dlopen( x, RTLD_NOW )
+	#define GetProcAddress( x, y )		dlsym( x, y )
+	#define SetCurrentDirectory( x )	(!chdir( x ))
+	#define FreeLibrary( x )			dlclose( x )
+	#define tell( a )					lseek(a, 0, SEEK_CUR)
+#endif
+
 	//#define MAKEWORD( a, b )			((short int)(((unsigned char)(a))|(((short int)((unsigned char)(b)))<<8)))
 	#define max( a, b )                 (((a) > (b)) ? (a) : (b))
 	#define min( a, b )                 (((a) < (b)) ? (a) : (b))

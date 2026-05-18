@@ -30,7 +30,9 @@ so it can unlock and free the data block after it has been played.
 =======================================================================
 */
 
+#if ! XASH_DSI // why?
 dma_t			dma;
+#endif
 
 void S_Activate( qboolean active )
 {

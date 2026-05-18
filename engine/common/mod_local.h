@@ -21,6 +21,7 @@ GNU General Public License for more details.
 #include "eiface.h"
 #include "ref_api.h"
 #include "studio.h"
+#include "cvar.h"
 
 #define LM_SAMPLE_SIZE		16
 #define LM_SAMPLE_EXTRASIZE		8

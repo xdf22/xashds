@@ -567,6 +567,10 @@ void Sys_Print( const char *pMsg )
 	}
 #endif
 
+#if XASH_DSI
+	printf(pMsg); // displays on the bottom screen console
+#endif
+
 	Sys_PrintLog( pMsg );
 
 	// Rcon_Print( pMsg );
