@@ -826,6 +826,12 @@ void Host_InitCommon( int argc, char **argv, const char *progname, qboolean bCha
 		}
 	}
 
+#if XASH_DSI
+	// always allow printing to the "console"
+	host.allow_console = true;
+	developer = DEV_EXTENDED;
+#endif
+
 	host.con_showalways = true;
 
 #if XASH_DEDICATED
