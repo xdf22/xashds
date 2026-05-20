@@ -75,6 +75,9 @@ target_include_directories(xashds PRIVATE
 target_compile_definitions(xashds PRIVATE XASH_DSI _NDS XASH_NO_NETWORK SINGLE_BINARY XASH_NO_ASYNC_NS_RESOLVE)
 target_compile_definitions(xashds PRIVATE STDINT_H=<stdint.h>)
 
+add_subdirectory(mainui)
+target_link_libraries(xashds PRIVATE xashmenu)
+
 # Half-Life is a 1998 first-person shooter (FPS) game developed by John Valve
 nds_create_rom(xashds
     NAME "Xash3D"
